@@ -4,6 +4,7 @@ import LembreteEntrada from "./LembreteEntrada"
 import Lixo from "./Lixo"
 import CoracaoCheio from "./CoracaoCheio"
 import CoracaoVazio from "./CoracaoVazio"
+import LembreteLista from "./LembreteLista"
 
 export default class App extends React.Component {
 
@@ -24,20 +25,33 @@ export default class App extends React.Component {
     })
   }
 
-  render() {
+  render(){
     return (
-      <div className="container border border-5 rounded my-7 p-5">
+    <Cartao>
+      <LembreteLista>
         <div className="row">
-          <div className="col-sm-12 col-lg-6 col-xxl-10">
+          <div className="col-12">
             <Cartao>
-              <LembreteEntrada onAdicionar={this.adicionarLembrete} />
-            </Cartao>
-            {this.state.lembrete.map((textolembrete, indice) => (
-              <Cartao key={indice} texto={textolembrete} />
-            ))}
+                <p>Preparar aula de programação</p>
+              </Cartao>
           </div>
         </div>
-      </div>
+        <div className="row">
+          <div className="col-12">
+              <Cartao>
+                <p>Fazer feira</p>
+              </Cartao>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+              <Cartao>
+                <p>Preparar marmitas</p>
+              </Cartao>
+          </div>
+        </div>
+      </LembreteLista>
+    </Cartao>
     )
   }
 }
