@@ -1,6 +1,6 @@
 const CoracaoVazio = (props) =>{
     return (
-        <i className={`fa-regular fa-heart fa-4 ${props.tamanho}}`}></i>
+        <i className={`fa-regular fa-heart fa-${props.tamanho}`}></i>
     )
 }
 

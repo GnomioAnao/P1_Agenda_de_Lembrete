@@ -6,5 +6,6 @@ export default function LembreteLista({ children }) {
     )
 }
 const estilos = {
-    principal: 'container border border-warning rounded my-3 p-3'
+    principal: 'container border rounded my-3 p-3'
+    
 }
