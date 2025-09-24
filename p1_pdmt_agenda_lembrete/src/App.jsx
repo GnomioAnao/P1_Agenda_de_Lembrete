@@ -25,6 +25,11 @@ export default class App extends React.Component {
     })
   }
 
+  deleteLembrete = (indice) => {
+    const novosLembretes = this.state.lembrete.filter((_, i) => i !== indice);
+    this.setState({ lembrete: novosLembretes });
+  }
+
   render() {
     return (
       <div className='d-flex align-items-center mt-4 justify-content-center min-vh-100 '>
@@ -40,7 +45,7 @@ export default class App extends React.Component {
                     <div className="col text-center">{textolembrete}</div>
                     <div className="col-auto">
                       <CoracaoVazio tamanho='1x'/>
-                      <Lixo tamanho='1x'/>
+                      <Lixo tamanho='1x' onClick={() => this.deleteLembrete(indice)}/>
                     </div>
                   </div>
               </Cartao>

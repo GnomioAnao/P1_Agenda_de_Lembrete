@@ -1,6 +1,9 @@
-const Lixo = (props) =>{
+const Lixo = ({onClick, tamanho}) =>{
     return (
-        <i className={`fa-solid fa-trash fa-${props.tamanho}`}></i>
+        <i className={`fa-solid fa-trash fa-${tamanho}`}
+            onClick={onClick}
+            style={{cursor: 'pointer'}}
+        ></i>
     )
 }
 
