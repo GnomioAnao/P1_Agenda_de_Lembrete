@@ -18,21 +18,21 @@ export class LembreteEntrada extends Component {
   render() {
     return (
         <div>
-        <div>
-          <input 
+          <input style={{textAlign: 'center' , fontSize: '23px'}}
             type="text"
             className="form-control"
             placeholder="Digite um lembrete..."
             value={this.state.texto}
+            icones={this.props.icones}
             onChange={this.escreveLembrete}
-          />
-            <button 
+          >
+          </input>
+            <button style={{fontSize: '20px'}} 
             onClick={this.adicionaLembrete}
             className="btn btn-outline-primary w-100 mt-3">
             Adicionar 
             </button>
         </div>
-      </div>
     )
   }
 }

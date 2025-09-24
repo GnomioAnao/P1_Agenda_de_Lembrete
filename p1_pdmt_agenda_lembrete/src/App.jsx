@@ -14,10 +14,10 @@ export default class App extends React.Component {
 
   //deleteLembrete: nome de possivel função para deletar lembrete salvo
 
-  icones = {
-    'Lixeira': 'trash',
-    'Coracao': 'heart'
-  }
+  // icones = {
+  //   'Lixeira': 'trash',
+  //   'Coracao': 'heart'
+  // }
 
   adicionarLembrete = (novoLembrete) => {
     this.setState({
@@ -27,46 +27,29 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className='align-items-center mt-4 justify-content-center row min-vh-100 '>
-        <div  
-        className='col-sm-12 col-lg-6'>
+      <div className='d-flex align-items-center mt-4 justify-content-center min-vh-100 '>
+        <div className="col-sm-12 col-lg-6">
           <Cartao>
-            <LembreteLista>
-              <div className="row">
-                <div 
-                style={{justifyContent: 'flex-end'}}
-                className="col-9 mx-auto">
-                  <Cartao>
-                    <p style={{ textAlign: 'center', fontSize: '23px' }}>
-                      Preparar aula de programação <CoracaoCheio tamanho="1x"/> <Lixo tamanho="1x"/>
-                    </p>
-                  </Cartao>
-                </div>
+            <div className="row">
+              <div 
+                style={{textAlign: 'center' , fontSize: '23px'}}
+                className="col-9 col-md-9 mx-auto">
+              {this.state.lembrete.map((textolembrete, indice) => (
+                <Cartao key={indice}>
+                  <div className="row align-items-center">
+                    <div className="col text-center">{textolembrete}</div>
+                    <div className="col-auto">
+                      <CoracaoVazio tamanho='1x'/>
+                      <Lixo tamanho='1x'/>
+                    </div>
+                  </div>
+              </Cartao>
+              ))}
+              <Cartao>
+                <LembreteEntrada onAdicionar={this.adicionarLembrete} />
+              </Cartao>
               </div>
-              <div className="row">
-                <div className="col-9 mx-auto">
-                  <Cartao>
-                    <p style={{ textAlign: 'center', fontSize: '23px' }}>
-                      Fazer feira <CoracaoVazio tamanho="1x"/> <Lixo tamanho="1x"/> 
-                    </p>
-                  </Cartao>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-9 mx-auto">
-                  <Cartao>
-                    <p style={{ textAlign: 'center' , fontSize: '23px' }}>
-                      Preparar marmitas <CoracaoVazio tamanho="1x"/> <Lixo tamanho="1x"/>
-                    </p>
-                  </Cartao>
-                </div>
-              </div>
-            </LembreteLista>
-            <button
-              style={{fontSize: '23px'}} 
-              className='btn btn-outline-primary w-100 mt-3'>
-              Adicionar
-            </button>
+            </div>
           </Cartao>
         </div>
       </div>
