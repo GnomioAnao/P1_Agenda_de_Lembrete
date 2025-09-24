@@ -5,6 +5,7 @@ import Lixo from "./Lixo"
 import CoracaoCheio from "./CoracaoCheio"
 import CoracaoVazio from "./CoracaoVazio"
 import LembreteLista from "./LembreteLista"
+import Favoritar from "./Favoritar"
 
 export default class App extends React.Component {
 
@@ -26,8 +27,8 @@ export default class App extends React.Component {
   }
 
   deleteLembrete = (indice) => {
-    const novosLembretes = this.state.lembrete.filter((_, i) => i !== indice);
-    this.setState({ lembrete: novosLembretes });
+    const novosLembretes = this.state.lembrete.filter((_, i) => i !== indice)
+    this.setState({ lembrete: novosLembretes })
   }
 
   render() {
@@ -44,7 +45,7 @@ export default class App extends React.Component {
                   <div className="row align-items-center">
                     <div className="col text-center">{textolembrete}</div>
                     <div className="col-auto">
-                      <CoracaoVazio tamanho='1x'/>
+                      <Favoritar/>
                       <Lixo tamanho='1x' onClick={() => this.deleteLembrete(indice)}/>
                     </div>
                   </div>
