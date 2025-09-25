@@ -6,7 +6,7 @@ export class LembreteEntrada extends Component {
   }
 
   escreveLembrete = (escreveu) => {
-    this.setState({ texto: escreveu.target.value });
+    this.setState({ texto: escreveu.target.value })
   }
 
    adicionaLembrete = () => {

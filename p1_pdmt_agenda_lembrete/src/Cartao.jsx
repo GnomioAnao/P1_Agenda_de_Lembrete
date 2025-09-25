@@ -5,7 +5,7 @@ const Cartao = (props) => {
         {props.texto || props.children}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Cartao
